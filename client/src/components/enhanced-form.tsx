@@ -223,7 +223,7 @@ export default function CompactForm({ onClose }: FormProps) {
           <Button
             disabled={loading}
             type="submit"
-            className="w-[90%] h-10 rounded-xl  bg-black text-white dark:bg-white dark:text-black"
+            className="w-[90%] h-10 rounded-xl bg-black text-white dark:bg-white dark:text-black"
           >
             {loading ? "Submitting..." : "Book Free Class"}
           </Button>
