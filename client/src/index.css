@@ -247,3 +247,8 @@ body[style*="overflow: hidden"] .bottom-help-bar {
   display: none !important;
 }
 
+.tasklist::-webkit-scrollbar{
+    display: none;
+}
+
+

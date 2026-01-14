@@ -45,7 +45,6 @@ const companiesRow2: CompanyLogo[] = [
   { name: "Monotype", logoUrl: "https://cdn.brandfetch.io/monotype.com/logo.png" },
   { name: "Interra Systems", logoUrl: "https://cdn.brandfetch.io/interrasystems.com/logo.png" },
   { name: "Superteam", logoUrl: "https://cdn.brandfetch.io/superteam.fun/logo.png" },
-  { name: "Lummo Shop", logoUrl: "https://cdn.brandfetch.io/lummo.shop/logo.png" },
   { name: "Capri Loans", logoUrl: "https://cdn.brandfetch.io/capriloans.in/logo.png" },
 ];
 
@@ -122,7 +121,7 @@ export default function CompanyLogos() {
           "
         >
           {/* Row 1 */}
-          <div className="overflow-hidden whitespace-nowrap mb-12">
+          <div className="overflow-hidden whitespace-nowrap py-2 mb-12">
             <div
               ref={marquee1.containerRef}
               className="flex animate-marquee items-center gap-[48px]"
@@ -144,7 +143,7 @@ export default function CompanyLogos() {
           </div>
 
           {/* Row 2 */}
-          <div className="overflow-hidden whitespace-nowrap">
+          <div className="overflow-hidden whitespace-nowrap py-2">
             <div
               ref={marquee2.containerRef}
               className="flex animate-marquee-reverse items-center gap-[48px]"

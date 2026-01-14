@@ -4,6 +4,7 @@ import { Menu, Sun, Moon, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "../hooks/use-theme";
 import { programs } from "@/pages/programs";
+import { Link } from "wouter";
 
 interface NavigationProps {
   onRequestCall?: () => void;
@@ -20,25 +21,25 @@ export default function Navigation({ onRequestCall }: NavigationProps) {
         <div className="h-16 flex items-center justify-between px-4 sm:px-6">
 
           {/* LOGO */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               src="/QualibytesLogo.png"
               alt="Qualibytes Logo"
               className="h-12 sm:h-16 object-contain"
             />
-          </a>
+          </Link>
 
           {/* ================= DESKTOP MENU ================= */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
 
-            <a href="/" className={baseLink}>HOME</a>
+            <Link to="/" className={`${baseLink} `}>HOME</Link>
 
             {/* PROGRAMS + ARROW (CORRECT BEHAVIOR) */}
             <div className="relative flex items-center">
 
               {/* PROGRAMS → NORMAL PAGE LINK (NO DROPDOWN EVER) */}
-              <a
-                href="/programs"
+              <Link
+                to="/programs"
                 className="
                   px-5 py-2 text-sm font-medium rounded-full
                   bg-black text-white
@@ -46,7 +47,7 @@ export default function Navigation({ onRequestCall }: NavigationProps) {
                 "
               >
                 PROGRAMS
-              </a>
+              </Link>
 
               {/* ARROW → ONLY DROPDOWN TRIGGER */}
               <div
@@ -74,37 +75,39 @@ export default function Navigation({ onRequestCall }: NavigationProps) {
                       mt-2 w-[240px]
                       bg-white dark:bg-black
                       border border-gray-200 dark:border-gray-700
-                      rounded-xl shadow-xl
+                      rounded-xl shadow-xl 
                       py-2
                     "
                   >
                     {programs.map((program) => (
-                      <a
+                      <Link
                         key={program.path}
-                        href={`/courses/${program.path}`}
+                        to={`/courses/${program.path}`}
                         className="
-                          block px-4 py-2 text-sm
+                          block px-4 py-2 text-sm lg:py-[3px]  
                           text-gray-700 dark:text-gray-300
                           hover:bg-gray-100 dark:hover:bg-gray-800
                         "
                       >
                         {program.name}
-                      </a>
+                        
+                        
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
             </div>
 
-            <a href="/about" className={baseLink}>ABOUT US</a>
-            <a href="/contact" className={baseLink}>CONTACT</a>
-            <a href="/testimonials" className={baseLink}>TESTIMONIALS</a>
+           <Link to="about" className={baseLink}>ABOUT US</Link>
+           <Link to="contact" className={baseLink}>CONTACT</Link>
+            <Link to="testimonials" className={baseLink}>TESTIMONIALS</Link>
 
-            <a href="/online-degree-programs">
+            <Link to="/online-degree-programs">
               <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-5 rounded-full">
                 ONLINE DEGREE
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* ================= RIGHT SIDE ================= */}
@@ -164,36 +167,37 @@ export default function Navigation({ onRequestCall }: NavigationProps) {
 function MobileMenu({ setMobileOpen }: any) {
   return (
     <div className="flex flex-col mt-10 space-y-4 text-lg">
-      <MobileLink label="HOME" href="/" />
-      <MobileLink label="ABOUT US" href="/about" />
-      <MobileLink label="CONTACT" href="/contact" />
-      <MobileLink label="TESTIMONIALS" href="/testimonials" />
+      <MobileLink label="HOME" href="/" onClick={()=>setMobileOpen(false)} />
+      <MobileLink label="ABOUT US" href="/about" onClick={()=>setMobileOpen(false)} />
+      <MobileLink label="CONTACT" href="/contact" onClick={()=>setMobileOpen(false)} />
+      <MobileLink label="TESTIMONIALS" href="/testimonials" onClick={()=>setMobileOpen(false)} />
 
-      <div className="border-t border-gray-300 dark:border-gray-700 pt-4">
+      <div className="border-t tasklist border-gray-300 dark:border-gray-700 pt-4   ">
         <h3 className="font-semibold mb-2">PROGRAMS</h3>
         {programs.map((program) => (
-          <a
+          <Link
             key={program.path}
-            href={`/courses/${program.path}`}
+            to={`/courses/${program.path}`}
             onClick={() => setMobileOpen(false)}
-            className="block py-2 text-gray-700 dark:text-gray-300"
+            className="block py-[4px] text-gray-700 dark:text-gray-300"
           >
             {program.name}
-          </a>
+          </Link>
         ))}
       </div>
     </div>
   );
 }
 
-function MobileLink({ href, label }: any) {
+function MobileLink({ href, label,onClick }: any) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
+      onClick={onClick}
       className="text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white"
     >
       {label}
-    </a>
+    </Link>
   );
 }
 

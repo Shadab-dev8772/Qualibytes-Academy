@@ -111,7 +111,7 @@ const DataAnalytics = ({ onRequestCall }: PageProps) => {
           </div>
         </div>
 
-        <div className="sm:hidden fixed bottom-0 left-0 w-full bg-[#0e0e0e] p-4 flex gap-4 border-t border-gray-700 z-50">
+        <div className="sm:hidden fixed bottom-8 left-0 w-full bg-white p-4 flex gap-4 border-t border-gray-700 z-50">
           <Button
             variant="outline"
             className="w-1/2 border-primary text-primary hover:bg-primary/10 hover:text-primary"

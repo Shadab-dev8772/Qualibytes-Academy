@@ -101,31 +101,30 @@ export default function CompactForm({ onClose }: FormProps) {
   };
 
   return (
-    <div className="w-full lg:px-8 flex justify-center">
+    <div className="w-full p-1 mt-3 h-[97%] flex justify-center items-center pt-3 ">
       <div
         className="
           relative
           bg-white
-          
-          w-full max-w-md sm:max-w-lg
+          w-[95%] max-w-md sm:max-w-lg
           bg-white/40 dark:bg-black/40
           backdrop-blur-xl
           border border-white/60 dark:border-white/10
           shadow-[0_8px_30px_rgba(0,0,0,0.12)]
           rounded-3xl
-          p-6 sm:p-8 md:p-2
-          mt-4 sm:mt-0 
+          p-6 sm:p-8 md:p-6
+          mt-4 sm:mt-0
         "
       >
         <h2 className="text-2xl  sm:text-3xl md:text-xl font-bold text-gray-900 dark:text-white text-center">
           Book a Free Live Class
         </h2>
 
-        <p className="text-center text-gray-600  dark:text-gray-300 text-xs sm:text-[13px] mt-1 mb-6 sm:mb-6">
+        <p className="text-center  text-gray-600  dark:text-gray-300 text-xs sm:text-[13px] mt-2 mb-6 sm:mb-6">
           Enter your details to reserve your seat in the next session.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-5  pl-8 sm:space-y-2">
+        <form onSubmit={handleSubmit} className="space-y-5 pl-8  sm:space-y-3">
           {/* Topic */}
           <div >
             <Label className="text-gray-700  dark:text-gray-200 font-medium text-sm sm:text-sm">
@@ -138,7 +137,7 @@ export default function CompactForm({ onClose }: FormProps) {
                 handleChange("topicOfInterest", value)
               }
             >
-              <SelectTrigger className="mt-[2px] h-8 bg-white w-[90%]  rounded-xl border-gray-300 dark:border-gray-600  dark:bg-gray-800 text-black dark:text-white text-[13px] shadow-base">
+              <SelectTrigger className="mt-[2px] h-8 bg-white w-[90%]  rounded-xl border-gray-300 dark:border-gray-600  dark:bg-gray-800 text-black dark:text-white text-[13px] shadow-sm">
                 <SelectValue placeholder="Select Program" />
               </SelectTrigger>
 
@@ -182,7 +181,7 @@ export default function CompactForm({ onClose }: FormProps) {
               placeholder="Enter full name"
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
-              className=" mt-[2px] w-[90%] h-8 rounded-xl border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white shadow-base"
+              className=" mt-[2px] w-[90%] h-8 rounded-xl border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white shadow-sm"
             />
           </div>
 
@@ -197,7 +196,7 @@ export default function CompactForm({ onClose }: FormProps) {
               placeholder="example@email.com"
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
-              className=" mt-[2px] rounded-xl w-[90%] h-8 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white shadow-base"
+              className=" mt-[2px] rounded-xl w-[90%] h-8 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white shadow-sm"
             />
           </div>
 
@@ -229,7 +228,7 @@ export default function CompactForm({ onClose }: FormProps) {
           </Button>
         </form>
 
-        <p className="text-center pb-4  text-xs sm:text-[14px] text-gray-500 dark:text-gray-300 mt-6 sm:mt-2">
+        <p className="text-center  text-xs sm:text-[12px] text-gray-500 dark:text-gray-300 mt-6 sm:mt-2">
           By continuing, you agree to our{" "}
           <a className="text-blue-600 underline">Terms</a> and{" "}
           <a className="text-blue-600 underline">Privacy Policy</a>.

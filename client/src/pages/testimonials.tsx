@@ -233,11 +233,7 @@ export default function TestimonialsPage({ onRequestCall }: TestimonialsProps) {
                 <span className="text-gray-600 dark:text-gray-300">
                   {t.preScaler}
                 </span>
-                <img
-                  src={t.companyLogo}
-                  alt={t.postScaler}
-                  className="h-8 object-contain"
-                />
+               
               </div>
             </div>
 

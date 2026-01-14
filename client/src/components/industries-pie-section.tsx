@@ -7,7 +7,7 @@ export default function IndustriesPieSection() {
         <img
           src="/industries.jpeg"
           alt="Industries Banner"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full"
         />
       </div>
     </section>

@@ -20,7 +20,7 @@ export default function FeaturedProgram() {
         <img
           src="/start.jpg"
           alt="Start Your IT Career Banner"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full"
         />
       </div>
 

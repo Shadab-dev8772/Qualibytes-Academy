@@ -35,7 +35,7 @@ function AnimatedCounter({ end, suffix }: { end: number; suffix: string }) {
   }, [end]);
 
   return (
-    <span className="text-5xl font-extrabold">
+    <span className="text-3xl font-extrabold">
       {count}
       {suffix}
     </span>
@@ -49,11 +49,11 @@ export default function HeroSection() {
   const imageSrc = "/hero-light.jpg";
 
   return (
-    <section className="bg-white dark:bg-black text-black dark:text-white transition-all py-14">
-      <div className="max-w-[1600px] mx-auto px-2">
+    <section className="bg-white dark:bg-black  text-black dark:text-white transition-all py-4 lg:px-14">
+      <div className="max-w-[1600px]  mx-auto px-2">
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 leading-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center mb-7 leading-tight">
           Transform Yourself into a High-Value Tech Expert
         </h1>
 
@@ -61,20 +61,20 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* LEFT SIDE */}
-          <div className="border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col bg-white dark:bg-neutral-900">
+          <div className="border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col dark:bg-neutral-900">
 
             {/* IMAGE */}
-            <div className="w-full h-[350px] sm:h-[380px] md:h-[420px] lg:h-[450px] border-b border-gray-300 dark:border-gray-700">
+            <div className="w-full h-[250px] sm:h-[280px] md:h-[300px] lg:h-[300px] border-b border-gray-300 dark:border-gray-700">
               <img
                 src={imageSrc}
                 alt="Hero Banner"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
 
             {/* COUNTERS */}
-            <div className="p-10 flex flex-col justify-center h-full">
-              <div className="space-y-12">
+            <div className="px-10 mt-3 flex pb-2 flex-col ">
+              <div className="space-y-1">
                 {statsData.map((stat, idx) => (
                   <div key={idx} className="flex items-center gap-6">
 
@@ -83,7 +83,7 @@ export default function HeroSection() {
 
                     {/* Label */}
                     <div className="flex flex-col">
-                      <span className="text-lg font-semibold">
+                      <span className="text-md font-semibold">
                         {stat.label}
                       </span>
                       <span className="border-b border-dotted border-gray-500 mt-1" />
@@ -97,7 +97,7 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT — FORM */}
-          <div className="border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-neutral-900 p-8 flex flex-col h-full">
+          <div className="border border-gray-300 dark:border-gray-700 rounded-xl dark:bg-neutral-900 py-4 flex flex-col h-full">
             <EnhancedForm />
           </div>
         </div>
